@@ -19,19 +19,6 @@ module "lambda" {
     }
 }
 
-module "s3" {
-    source = "../../modules/aws/s3/default"
-
-    application_name = var.application_name
-
-    tags = {
-        "Name" = "${var.application_name}-${terraform.workspace}"
-        "Application" = var.application_name
-        "Environment" = upper(terraform.workspace)
-        "Terraform" = "true"
-    }
-}
-
 terraform {
     backend "s3" {
         bucket = "anderson-arendt-backend-terraform-remote-state"
