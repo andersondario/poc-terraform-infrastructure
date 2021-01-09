@@ -21,11 +21,11 @@ module "lambda" {
 
 terraform {
     backend "s3" {
-        bucket = "anderson-arendt-backend-terraform-remote-state"
+        bucket = "anderson-arendt-terraform-backend-terraform-remote-state"
         encrypt = true
         key = "terraform.tfstate"
 
-        dynamodb_table = "anderson-arendt-backend-terraform-state-lock"
+        dynamodb_table = "anderson-arendt-terraform-backend-terraform-state-lock"
         region = "us-east-1"
         profile = "Terraform"
     }
