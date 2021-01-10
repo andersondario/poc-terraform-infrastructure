@@ -8,8 +8,8 @@ module "lambda" {
 
     lambdas_definitions = var.lambdas_definitions
     application_name = var.application_name
-    api_base_path = var.api_base_path
-    api_version = var.api_version
+    region = var.region
+    account_id = var.account_id
 
     tags = {
         "Name" = "${var.application_name}-${terraform.workspace}"

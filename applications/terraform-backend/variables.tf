@@ -1,10 +1,21 @@
-variable "api_base_path" {
-    description = "Base path of the endpoints. Example of url: <URL>/<BASE_PATH>/<VERSION>/resource"
+variable "application_name" {
+    description = "Name of the application. Must be unique in AWS."
     type = string
 }
 
-variable "api_version" {
-    description = "Version of the API. Example of url: <URL>/<BASE_PATH>/<VERSION>/resource"
+variable "tags" {
+    description = "Tags to set on the bucket."
+    type = map(string)
+    default = {}
+}
+
+variable "account_id" {
+    description = "AWS Account ID"
+    type = string
+}
+
+variable "region" {
+    description = "AWS Region"
     type = string
 }
 
@@ -21,15 +32,6 @@ variable "lambdas_definitions" {
     }))
 }
 
-variable "region" {
-    type = string
-}
-
 variable "profile" {
     default = "Terraform"
-}
-
-variable "application_name" {
-    description = "Name of the application. Must be unique in AWS."
-    type = string
 }
