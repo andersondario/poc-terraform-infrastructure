@@ -9,13 +9,13 @@ variable "tags" {
     default = {}
 }
 
-variable "api_base_path" {
-    description = "Base path of the endpoints. Example of url: <URL>/<BASE_PATH>/<VERSION>/resource"
+variable "account_id" {
+    description = "AWS Account ID"
     type = string
 }
 
-variable "api_version" {
-    description = "Version of the API. Example of url: <URL>/<BASE_PATH>/<VERSION>/resource"
+variable "region" {
+    description = "AWS Region"
     type = string
 }
 
